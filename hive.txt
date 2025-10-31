@@ -1,0 +1,75 @@
+Hive Command
+# Step 2: Open Hive CLI
+
+# Now open the Hive shell:
+
+hive
+
+# If everything’s working, you’ll see:
+
+hive>
+
+# You are now inside the Hive command line.
+
+#  Step 3: Basic Hive Commands to Run
+
+# Here’s a complete set of Hive commands for practical use:
+
+# 1. Check Databases
+
+show databases;
+
+# 2. Create a Database
+
+create database studentdb;
+
+# Switch to it:
+
+use studentdb;
+
+# 3. Create a Table
+
+create table student(
+    id int,
+    name string,
+    dept string,
+    marks int
+)
+row format delimited
+fields terminated by ‘,’;
+
+# 4. Show Tables
+
+show tables;
+
+# 5. Describe Table Structure
+
+describe student;
+
+ # Step 5: Load Your CSV File into the Table
+
+# Now load your local file /home/cloudera/student.csv into the table:
+
+load data local inpath ‘/home/cloudera/student.csv’ into table student;
+
+#  Step 6: Verify the Data
+
+# After loading, check the contents:
+
+select * from student;
+
+# 9. Insert More Data
+
+insert into table student values (104, ‘Priya’, ‘CSE’, 88);
+
+# 10. Delete Data (Hive 0.14+)
+
+delete from student where id=103;
+
+# 11. Drop Table
+
+drop table student;
+
+# 12. Drop Database
+
+drop database studentdb cascade;

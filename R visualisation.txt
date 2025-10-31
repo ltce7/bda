@@ -1,0 +1,28 @@
+R visualization
+# 6. Scatter Plot
+
+plot(data$Marks,
+     col = "purple",
+     pch = 19,
+     main = "Scatter Plot of Student Marks",
+     xlab = "Index",
+     ylab = "Marks")
+
+# 7. Summary Statistics
+
+cat("\n---- Summary of Marks ----\n")
+print(summary(data$Marks))
+cat("Average Marks:", mean(data$Marks), "\n")
+cat("Highest Marks:", max(data$Marks), "\n")
+cat("Lowest Marks:", min(data$Marks), "\n")
+
+ How to Run It
+1.	Open RStudio
+2.	Click File → New File → R Script
+3.	Paste the above code
+4.	Save as BDA_Data_Visualization.R
+5.	Click Source (or press Ctrl + Shift + Enter)
+
+You’ll see:
+•	Console output (dataset + summary)
+•	Visualizations in the Plots tab

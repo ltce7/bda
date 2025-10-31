@@ -1,0 +1,51 @@
+HDFS Basic Commands in Cloudera VM
+1. Help Command
+hdfs dfs -help ls
+
+2. List Files
+hdfs dfs -ls /
+
+3. Make / Create a New Directory
+hdfs dfs -mkdir Input
+
+4. List Files in Root Directory
+hdfs dfs -ls Input
+
+5. List Files and Directories Recursively
+hdfs dfs -ls -R /
+
+6. Copy File from Local System into HDFS
+
+(Make sure the file exists on your desktop first, e.g. StudentInfo.txt)
+
+hdfs dfs -put /home/cloudera/Desktop/StudentInfo.txt Input/StudentInfo.txt
+
+7. Retrieve File from HDFS to Local System
+hdfs dfs -get Input/StudentInfo.txt /home/cloudera/Desktop/StudentInfo1.txt
+
+8. Display File Content
+
+Full content:
+
+hdfs dfs -cat Input/StudentInfo.txt
+
+
+First few lines:
+
+hdfs dfs -cat Input/StudentInfo.txt | head
+
+
+Last few lines:
+
+hdfs dfs -cat Input/StudentInfo.txt | tail
+
+9. Delete Files from HDFS
+
+Delete single file:
+
+hdfs dfs -rm Input/StudentInfo.txt
+
+
+Delete entire directory:
+
+hdfs dfs -rm -r /Input
